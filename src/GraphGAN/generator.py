@@ -8,7 +8,7 @@ class Generator(object):
         self.node_emd_init = node_emd_init
 
         with tf.compat.v1.variable_scope('generator'):
-            self.embedding_matrix = tf.get_variable(name="embedding",
+            self.embedding_matrix = tf.Variable(name="embedding",
                                                     shape=self.node_emd_init.shape,
                                                     initializer=tf.constant_initializer(self.node_emd_init),
                                                     trainable=True)
