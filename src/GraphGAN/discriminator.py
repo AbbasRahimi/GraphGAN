@@ -7,7 +7,7 @@ class Discriminator(object):
         self.n_node = n_node
         self.node_emd_init = node_emd_init
 
-        with tf.variable_scope('discriminator'):
+        with tf.compat.v1.variable_scope('discriminator'):
             self.embedding_matrix = tf.get_variable(name="embedding",
                                                     shape=self.node_emd_init.shape,
                                                     initializer=tf.constant_initializer(self.node_emd_init),
