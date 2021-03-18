@@ -8,6 +8,9 @@ import tensorflow as tf
 import config
 import generator
 import discriminator
+
+import sys
+sys.path.append(".")
 from src import utils
 from src.evaluation import link_prediction as lp
 
@@ -110,13 +113,13 @@ class GraphGAN(object):
     def build_generator(self):
         """initializing the generator"""
 
-        with tf.variable_scope("generator"):
+        with tf.compat.v1.variable_scope("generator"):
             self.generator = generator.Generator(n_node=self.n_node, node_emd_init=self.node_embed_init_g)
 
     def build_discriminator(self):
         """initializing the discriminator"""
 
-        with tf.variable_scope("discriminator"):
+        with tf.compat.v1.variable_scope("discriminator"):
             self.discriminator = discriminator.Discriminator(n_node=self.n_node, node_emd_init=self.node_embed_init_d)
 
     def train(self):
