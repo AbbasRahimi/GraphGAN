@@ -33,7 +33,7 @@ train_filename = "data/" + app + "/" + dataset + "_train.txt"
 test_filename = "data/" + app + "/" + dataset + "_test.txt"
 test_neg_filename = "data/" + app + "/" + dataset + "_test_neg.txt"
 pretrain_emb_filename_d = "pre_train/" + app + "/" + dataset + "_pre_train.emb"
-pretrain_emb_filename_g = "../../pre_train/" + app + "/" + dataset + "_pre_train.emb"
+pretrain_emb_filename_g = "pre_train/" + app + "/" + dataset + "_pre_train.emb"
 emb_filenames = ["results/" + app + "/" + dataset + "_gen_.emb",
                  "results/" + app + "/" + dataset + "_dis_.emb"]
 result_filename = "results/" + app + "/" + dataset + ".txt"
