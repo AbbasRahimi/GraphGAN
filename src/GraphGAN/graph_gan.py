@@ -323,5 +323,6 @@ class GraphGAN(object):
 
 
 if __name__ == "__main__": 
+    tf.compat.v1.disable_eager_execution()
     graph_gan = GraphGAN()
     graph_gan.train()
