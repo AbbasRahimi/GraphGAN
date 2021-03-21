@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import config
 
 
@@ -7,8 +7,8 @@ class Generator(object):
         self.n_node = n_node
         self.node_emd_init = node_emd_init
 
-        with tf.compat.v1.variable_scope('generator'):
-            self.embedding_matrix = tf.Variable(name="embedding",
+        with tf.variable_scope('generator'):
+            self.embedding_matrix = tf.get_variable(name="embedding",
                                                     shape=self.node_emd_init.shape,
                                                     initializer=tf.constant_initializer(self.node_emd_init),
                                                     trainable=True)
